@@ -120,6 +120,9 @@
 	<data name="幸福工厂 专用服务器" xml:space="preserve">
     <value>Images/Games/satisfactory.png</value>
   </data>
+	<data name="欧洲卡车模拟2 专用服务器" xml:space="preserve">
+    <value>Images/Games/ets2.png</value>
+  </data>
 	<data name="雾锁王国 专用服务器" xml:space="preserve">
     <value>Images/Games/enshrouded.png</value>
   </data>

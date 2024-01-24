@@ -392,6 +392,7 @@
     <Compile Include="GameServer\Engine\Unity.cs" />
     <Compile Include="GameServer\Engine\UnrealEngine.cs" />
     <Compile Include="GameServer\Enshrouded.cs" />
+    <Compile Include="GameServer\ETS2.cs" />
     <Compile Include="GameServer\HEAT.cs" />
     <Compile Include="GameServer\HLOF.cs" />
     <Compile Include="GameServer\INSS.cs" />
@@ -851,6 +852,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Games\satisfactory.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Games\ets2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets')" />
