@@ -268,6 +268,15 @@ namespace WindowsGSM.GameServer.Data {
         }
         
         /// <summary>
+        ///   查找类似 Images/Games/satisfactory.png 的本地化字符串。
+        /// </summary>
+        public static string 幸福工厂_专用服务器 {
+            get {
+                return ResourceManager.GetString("幸福工厂 专用服务器", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Images/Games/pw.png 的本地化字符串。
         /// </summary>
         public static string 幻兽帕鲁_专用服务器 {
@@ -489,6 +498,15 @@ namespace WindowsGSM.GameServer.Data {
         public static string 雷霆一击_专用服务器 {
             get {
                 return ResourceManager.GetString("雷霆一击 专用服务器", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Images/Games/enshrouded.png 的本地化字符串。
+        /// </summary>
+        public static string 雾锁王国_专用服务器 {
+            get {
+                return ResourceManager.GetString("雾锁王国 专用服务器", resourceCulture);
             }
         }
         

@@ -59,6 +59,8 @@ namespace WindowsGSM.GameServer.Data
                 case SDK2013.FullName: return new SDK2013(serverData);
                 case VM.FullName: return new VM(serverData);
                 case PW.FullName: return new PW(serverData);
+                case Enshrouded.FullName: return new Enshrouded(serverData);
+                case Satisfactory.FullName: return new Satisfactory(serverData);
                 default: // Load Plugin
                 {
                     if (pluginList == null) { return null; }
