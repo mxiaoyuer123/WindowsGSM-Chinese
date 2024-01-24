@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -26,10 +27,10 @@ namespace WindowsGSM.GameServer
         public dynamic QueryMethod = new Query.A2S();
 
         // 默认配置项：端口号、查询端口、默认地图、最大玩家数、额外参数及应用 ID
-        public string Port = "8211";
-        public string QueryPort = "8212";
-        public string Defaultmap = "";
-        public string Maxplayers = "32";
+        public string Port = "15636";
+        public string QueryPort = "15637";
+        public string Defaultmap = "Dedicated";
+        public string Maxplayers = "16";
         public string Additional = $""; // 额外的服务器启动参数
         public string AppId = "2278520";
 
@@ -42,7 +43,26 @@ namespace WindowsGSM.GameServer
         // - 在安装后为游戏服务器创建一个默认的 cfg
         public async void CreateServerCFG()
         {
+            var serverConfig = new
+            {
+                name = $"{_serverData.ServerName}",
+                password = "",
+                saveDirectory = "./savegame",
+                logDirectory = "./logs",
+                ip = $"{_serverData.ServerIP}",
+                gamePort = _serverData.ServerPort,
+                queryPort = _serverData.ServerQueryPort,
+                slotCount = _serverData.ServerMaxPlayer
+            };
 
+            // Convert the object to JSON format
+            string jsonContent = JsonConvert.SerializeObject(serverConfig, Formatting.Indented);
+
+            // Specify the file path
+            string filePath = Functions.ServerPath.GetServersServerFiles(_serverData.ServerID, "enshrouded_server.json");
+
+            // Write the JSON content to the file
+            File.WriteAllText(filePath, jsonContent);
         }
 
         // 启动服务器进程
@@ -54,8 +74,14 @@ namespace WindowsGSM.GameServer
                 Error = $"{Path.GetFileName(shipExePath)} 未找到 ({shipExePath})";
                 return null;
             }
-            string param = $" -ServerName=\"{_serverData.ServerName}\" -publicport=\"{_serverData.ServerPort}\" -players=\"{_serverData.ServerMaxPlayer}\" {_serverData.ServerParam}" + (!AllowsEmbedConsole ? " -log" : string.Empty);
+            string param = $" {_serverData.ServerParam} ";
+            param += $"-ip=\"{_serverData.ServerIP}\" ";
+            param += $"-gamePort={_serverData.ServerPort} ";
+            param += $"-queryPort={_serverData.ServerQueryPort} ";
+            param += $"-slotCount={_serverData.ServerMaxPlayer} ";
+            param += $"-name=\"\"\"{_serverData.ServerName}\"\"\"";
 
+            UpdateConfig();
             // 创建进程，并设置启动参数
             Process p;
             if (!AllowsEmbedConsole)
@@ -100,7 +126,26 @@ namespace WindowsGSM.GameServer
             }
             return p;
         }
+        public void UpdateConfig()
+        {
+            var serverConfig = new
+            {
+                name = $"{_serverData.ServerName}",
+                ip = $"{_serverData.ServerIP}",
+                gamePort = _serverData.ServerPort,
+                queryPort = _serverData.ServerQueryPort,
+                slotCount = _serverData.ServerMaxPlayer
+            };
 
+            // Convert the object to JSON format
+            string jsonContent = JsonConvert.SerializeObject(serverConfig, Formatting.Indented);
+
+            // Specify the file path
+            string filePath = Functions.ServerPath.GetServersServerFiles(_serverData.ServerID, "enshrouded_server.json");
+
+            // Write the JSON content to the file
+            File.WriteAllText(filePath, jsonContent);
+        }
 
         // - Stop server function
         public async Task Stop(Process p)
@@ -132,6 +177,10 @@ namespace WindowsGSM.GameServer
             // 使用 SteamCMD 更新服务端
             var (p, error) = await Installer.SteamCMD.UpdateEx(_serverData.ServerID, AppId, validate, custom: custom);
             Error = error;
+            if (error != null && p != null)
+            {
+                UpdateConfig();
+            }
             return p;
         }
 

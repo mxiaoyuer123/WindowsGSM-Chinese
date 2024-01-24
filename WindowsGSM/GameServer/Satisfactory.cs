@@ -27,11 +27,11 @@ namespace WindowsGSM.GameServer
         public dynamic QueryMethod = new Query.A2S();
 
         // 默认配置项：端口号、查询端口、默认地图、最大玩家数、额外参数及应用 ID
-        public string Port = "8211";
-        public string QueryPort = "8212";
+        public string Port = "7777";
+        public string QueryPort = "7778";
         public string Defaultmap = "";
-        public string Maxplayers = "32";
-        public string Additional = $""; // 额外的服务器启动参数
+        public string Maxplayers = "";
+        public string Additional = $"-log -unattended"; // 额外的服务器启动参数
         public string AppId = "1690800";
 
         // 构造函数，需要传入服务器配置数据对象
@@ -55,8 +55,13 @@ namespace WindowsGSM.GameServer
                 Error = $"{Path.GetFileName(shipExePath)} 未找到 ({shipExePath})";
                 return null;
             }
-            string param = $" -ServerName=\"{_serverData.ServerName}\" -publicport=\"{_serverData.ServerPort}\" -players=\"{_serverData.ServerMaxPlayer}\" {_serverData.ServerParam}" + (!AllowsEmbedConsole ? " -log" : string.Empty);
-
+            string param = "";
+            param += $" {_serverData.ServerParam}";
+            param += string.IsNullOrWhiteSpace(_serverData.ServerPort) ? string.Empty : $" -Port={_serverData.ServerPort}";
+            param += string.IsNullOrWhiteSpace(_serverData.ServerQueryPort) ? string.Empty : $" -ServerQueryPort={_serverData.ServerQueryPort}";
+            param += string.IsNullOrWhiteSpace(_serverData.ServerQueryPort) ? string.Empty : $" -BeaconPort={_serverData.ServerQueryPort + 1}";
+            param += string.IsNullOrWhiteSpace(_serverData.ServerMaxPlayer) ? string.Empty : $" -MaxPlayers={_serverData.ServerMaxPlayer}";
+            param += string.IsNullOrWhiteSpace(_serverData.ServerIP) ? string.Empty : $" -Multihome={_serverData.ServerIP}";
             // 创建进程，并设置启动参数
             Process p;
             if (!AllowsEmbedConsole)
