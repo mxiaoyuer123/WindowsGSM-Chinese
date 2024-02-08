@@ -62,6 +62,7 @@ namespace WindowsGSM.GameServer.Data
                 case ETS2.FullName: return new ETS2(serverData);
                 case Enshrouded.FullName: return new Enshrouded(serverData);
                 case Satisfactory.FullName: return new Satisfactory(serverData);
+                case NOTD.FullName: return new NOTD(serverData);
                 default: // Load Plugin
                 {
                     if (pluginList == null) { return null; }

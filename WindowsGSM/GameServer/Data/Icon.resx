@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-	<!-- 
+  <!-- 
     Microsoft ResX Schema 
     
     Version 2.0
@@ -59,221 +59,224 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-		<xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
-		<xsd:element name="root" msdata:IsDataSet="true">
-			<xsd:complexType>
-				<xsd:choice maxOccurs="unbounded">
-					<xsd:element name="metadata">
-						<xsd:complexType>
-							<xsd:sequence>
-								<xsd:element name="value" type="xsd:string" minOccurs="0" />
-							</xsd:sequence>
-							<xsd:attribute name="name" use="required" type="xsd:string" />
-							<xsd:attribute name="type" type="xsd:string" />
-							<xsd:attribute name="mimetype" type="xsd:string" />
-							<xsd:attribute ref="xml:space" />
-						</xsd:complexType>
-					</xsd:element>
-					<xsd:element name="assembly">
-						<xsd:complexType>
-							<xsd:attribute name="alias" type="xsd:string" />
-							<xsd:attribute name="name" type="xsd:string" />
-						</xsd:complexType>
-					</xsd:element>
-					<xsd:element name="data">
-						<xsd:complexType>
-							<xsd:sequence>
-								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-							</xsd:sequence>
-							<xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-							<xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-							<xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-							<xsd:attribute ref="xml:space" />
-						</xsd:complexType>
-					</xsd:element>
-					<xsd:element name="resheader">
-						<xsd:complexType>
-							<xsd:sequence>
-								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-							</xsd:sequence>
-							<xsd:attribute name="name" type="xsd:string" use="required" />
-						</xsd:complexType>
-					</xsd:element>
-				</xsd:choice>
-			</xsd:complexType>
-		</xsd:element>
-	</xsd:schema>
-	<resheader name="resmimetype">
-		<value>text/microsoft-resx</value>
-	</resheader>
-	<resheader name="version">
-		<value>2.0</value>
-	</resheader>
-	<resheader name="reader">
-		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-	</resheader>
-	<resheader name="writer">
-		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-	</resheader>
-	<data name="幸福工厂 专用服务器" xml:space="preserve">
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="死亡之夜 专用服务器" xml:space="preserve">
+    <value>Images/Games/notd.png</value>
+  </data>
+  <data name="幸福工厂 专用服务器" xml:space="preserve">
     <value>Images/Games/satisfactory.png</value>
   </data>
-	<data name="欧洲卡车模拟2 专用服务器" xml:space="preserve">
+  <data name="欧洲卡车模拟2 专用服务器" xml:space="preserve">
     <value>Images/Games/ets2.png</value>
   </data>
-	<data name="雾锁王国 专用服务器" xml:space="preserve">
+  <data name="雾锁王国 专用服务器" xml:space="preserve">
     <value>Images/Games/enshrouded.png</value>
   </data>
-	<data name="幻兽帕鲁 专用服务器" xml:space="preserve">
+  <data name="幻兽帕鲁 专用服务器" xml:space="preserve">
     <value>Images/Games/pw.png</value>
   </data>
-	<data name="七日杀 专用服务器" xml:space="preserve">
+  <data name="七日杀 专用服务器" xml:space="preserve">
     <value>Images/Games/7dtd.png</value>
   </data>
-	<data name="英灵神殿 专用服务器" xml:space="preserve">
+  <data name="英灵神殿 专用服务器" xml:space="preserve">
     <value>Images/Games/vm.png</value>
   </data>
-	<data name="方舟:生存计划 专用服务器" xml:space="preserve">
+  <data name="方舟:生存计划 专用服务器" xml:space="preserve">
     <value>Images/Games/arkse.png</value>
   </data>
-	<data name="猎户座 专用服务器" xml:space="preserve">
+  <data name="猎户座 专用服务器" xml:space="preserve">
     <value>Images/Games/avorion.png</value>
   </data>
-	<data name="潜渊症 专用服务器" xml:space="preserve">
+  <data name="潜渊症 专用服务器" xml:space="preserve">
     <value>Images/Games/bt.png</value>
   </data>
-	<data name="黑色艉流 专用服务器" xml:space="preserve">
+  <data name="黑色艉流 专用服务器" xml:space="preserve">
     <value>Images/Games/bw.png</value>
   </data>
-	<data name="流放者柯南 专用服务器" xml:space="preserve">
+  <data name="流放者柯南 专用服务器" xml:space="preserve">
     <value>Images/Games/ce.png</value>
   </data>
-	<data name="反恐精英:1.6 专用服务器" xml:space="preserve">
+  <data name="反恐精英:1.6 专用服务器" xml:space="preserve">
     <value>Images/Games/cs.png</value>
   </data>
-	<data name="反恐精英-零点行动 专用服务器" xml:space="preserve">
+  <data name="反恐精英-零点行动 专用服务器" xml:space="preserve">
     <value>Images/Games/cscz.png</value>
   </data>
-	<data name="反恐精英:全球攻势 专用服务器" xml:space="preserve">
+  <data name="反恐精英:全球攻势 专用服务器" xml:space="preserve">
     <value>Images/Games/csgo.png</value>
   </data>
-	<data name="反恐精英:起源 专用服务器" xml:space="preserve">
+  <data name="反恐精英:起源 专用服务器" xml:space="preserve">
     <value>Images/Games/css.png</value>
   </data>
-	<data name="胜利之日 专用服务器" xml:space="preserve">
+  <data name="胜利之日 专用服务器" xml:space="preserve">
     <value>Images/Games/dod.png</value>
   </data>
-	<data name="胜利之日:起源 专用服务器" xml:space="preserve">
+  <data name="胜利之日:起源 专用服务器" xml:space="preserve">
     <value>Images/Games/dods.png</value>
   </data>
-	<data name="僵尸末日 专用服务器" xml:space="preserve">
+  <data name="僵尸末日 专用服务器" xml:space="preserve">
     <value>Images/Games/dayz.png</value>
   </data>
-	<data name="死亡竞赛经典版 专用服务器" xml:space="preserve">
+  <data name="死亡竞赛经典版 专用服务器" xml:space="preserve">
     <value>Images/Games/dmc.png</value>
   </data>
-	<data name="Eco 专用服务器" xml:space="preserve">
+  <data name="Eco 专用服务器" xml:space="preserve">
     <value>Images/Games/eco.png</value>
   </data>
-	<data name="帝国霸业-银河生存 专用服务器" xml:space="preserve">
+  <data name="帝国霸业-银河生存 专用服务器" xml:space="preserve">
     <value>Images/Games/egs.png</value>
   </data>
-	<data name="帝国神话 专用服务器" xml:space="preserve">
+  <data name="帝国神话 专用服务器" xml:space="preserve">
     <value>Images/Games/moe.png</value>
   </data>
-	<data name="盖瑞模组 专用服务器" xml:space="preserve">
+  <data name="盖瑞模组 专用服务器" xml:space="preserve">
     <value>Images/Games/gmod.png</value>
   </data>
-	<data name="侠盗猎车手V 专用服务器" xml:space="preserve">
+  <data name="侠盗猎车手V 专用服务器" xml:space="preserve">
     <value>Images/Games/gta5.png</value>
   </data>
-	<data name="半条命2:死亡竞赛 专用服务器" xml:space="preserve">
+  <data name="半条命2:死亡竞赛 专用服务器" xml:space="preserve">
     <value>Images/Games/hl2dm.png</value>
   </data>
-	<data name="半条命:针锋相对 专用服务器" xml:space="preserve">
+  <data name="半条命:针锋相对 专用服务器" xml:space="preserve">
     <value>Images/Games/hlof.png</value>
   </data>
-	<data name="热能标记 专用服务器" xml:space="preserve">
+  <data name="热能标记 专用服务器" xml:space="preserve">
     <value>Images/Games/heat.png</value>
   </data>
-	<data name="叛乱 专用服务器" xml:space="preserve">
+  <data name="叛乱 专用服务器" xml:space="preserve">
     <value>Images/Games/ins.png</value>
   </data>
-	<data name="叛乱:沙漠风暴 专用服务器" xml:space="preserve">
+  <data name="叛乱:沙漠风暴 专用服务器" xml:space="preserve">
     <value>Images/Games/inss.png</value>
   </data>
-	<data name="求生之路2 专用服务器" xml:space="preserve">
+  <data name="求生之路2 专用服务器" xml:space="preserve">
     <value>Images/Games/l4d2.png</value>
   </data>
-	<data name="我的世界: 基岩版服务器" xml:space="preserve">
+  <data name="我的世界: 基岩版服务器" xml:space="preserve">
     <value>Images/Games/mcbe.png</value>
   </data>
-	<data name="我的世界: Java版服务器" xml:space="preserve">
+  <data name="我的世界: Java版服务器" xml:space="preserve">
     <value>Images/Games/mc.png</value>
   </data>
-	<data name="我的世界: 携带版服务器 (PocketMine-MP)" xml:space="preserve">
+  <data name="我的世界: 携带版服务器 (PocketMine-MP)" xml:space="preserve">
     <value>Images/Games/mcpe.png</value>
   </data>
-	<data name="雷霆一击 专用服务器" xml:space="preserve">
+  <data name="雷霆一击 专用服务器" xml:space="preserve">
     <value>Images/Games/mordhau.png</value>
   </data>
-	<data name="地狱已满 专用服务器" xml:space="preserve">
+  <data name="地狱已满 专用服务器" xml:space="preserve">
     <value>Images/Games/nmrih.png</value>
   </data>
-	<data name="Onset 专用服务器" xml:space="preserve">
+  <data name="Onset 专用服务器" xml:space="preserve">
     <value>Images/Games/onset.png</value>
   </data>
-	<data name="西部狂徒 专用服务器" xml:space="preserve">
+  <data name="西部狂徒 专用服务器" xml:space="preserve">
     <value>Images/Games/olow.png</value>
   </data>
-	<data name="战争附言 专用服务器" xml:space="preserve">
+  <data name="战争附言 专用服务器" xml:space="preserve">
     <value>Images/Games/ps.png</value>
   </data>
-	<data name="君临天下 专用服务器" xml:space="preserve">
+  <data name="君临天下 专用服务器" xml:space="preserve">
     <value>Images/Games/rok.png</value>
   </data>
-	<data name="跳跃袭击 专用服务器" xml:space="preserve">
+  <data name="跳跃袭击 专用服务器" xml:space="preserve">
     <value>Images/Games/rcc.png</value>
   </data>
-	<data name="雨中冒险2 专用服务器" xml:space="preserve">
+  <data name="雨中冒险2 专用服务器" xml:space="preserve">
     <value>Images/Games/ror2.png</value>
   </data>
-	<data name="腐蚀 专用服务器" xml:space="preserve">
+  <data name="腐蚀 专用服务器" xml:space="preserve">
     <value>Images/Games/rust.png</value>
   </data>
-	<data name="Source SDK Base 2013 专用服务器" xml:space="preserve">
+  <data name="Source SDK Base 2013 专用服务器" xml:space="preserve">
     <value>Images/Games/hl2dm.png</value>
   </data>
-	<data name="太空工程师 专用服务器" xml:space="preserve">
+  <data name="太空工程师 专用服务器" xml:space="preserve">
     <value>Images/Games/se.png</value>
   </data>
-	<data name="战术小队 专用服务器" xml:space="preserve">
+  <data name="战术小队 专用服务器" xml:space="preserve">
     <value>Images/Games/sq.png</value>
   </data>
-	<data name="风暴工程 专用服务器" xml:space="preserve">
+  <data name="风暴工程 专用服务器" xml:space="preserve">
     <value>Images/Games/sw.png</value>
   </data>
-	<data name="军团要塞2 专用服务器" xml:space="preserve">
+  <data name="军团要塞2 专用服务器" xml:space="preserve">
     <value>Images/Games/tf2.png</value>
   </data>
-	<data name="军团要塞:经典 专用服务器" xml:space="preserve">
+  <data name="军团要塞:经典 专用服务器" xml:space="preserve">
     <value>Images/Games/tfc.png</value>
   </data>
-	<data name="森林 专用服务器" xml:space="preserve">
+  <data name="森林 专用服务器" xml:space="preserve">
     <value>Images/Games/tf.png</value>
   </data>
-	<data name="森林之子 专用服务器" xml:space="preserve">
+  <data name="森林之子 专用服务器" xml:space="preserve">
     <value>Images/Games/sotf.png</value>
   </data>
-	<data name="未转变者 专用服务器" xml:space="preserve">
+  <data name="未转变者 专用服务器" xml:space="preserve">
     <value>Images/Games/unt.png</value>
   </data>
-	<data name="复古物语 专用服务器" xml:space="preserve">
+  <data name="复古物语 专用服务器" xml:space="preserve">
     <value>Images/Games/vts.png</value>
   </data>
-	<data name="僵尸恐慌 专用服务器" xml:space="preserve">
+  <data name="僵尸恐慌 专用服务器" xml:space="preserve">
     <value>Images/Games/zps.png</value>
   </data>
 </root>

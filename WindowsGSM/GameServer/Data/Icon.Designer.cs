@@ -376,6 +376,15 @@ namespace WindowsGSM.GameServer.Data {
         }
         
         /// <summary>
+        ///   查找类似 Images/Games/notd.png 的本地化字符串。
+        /// </summary>
+        public static string 死亡之夜_专用服务器 {
+            get {
+                return ResourceManager.GetString("死亡之夜 专用服务器", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Images/Games/dmc.png 的本地化字符串。
         /// </summary>
         public static string 死亡竞赛经典版_专用服务器 {
