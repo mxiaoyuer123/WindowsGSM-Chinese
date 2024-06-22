@@ -497,6 +497,7 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <None Include="app.manifest" />
+    <Compile Include="GameServer\CK.cs" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>PublicSettingsSingleFileGenerator</Generator>
@@ -859,6 +860,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Games\notd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Games\ck.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets')" />

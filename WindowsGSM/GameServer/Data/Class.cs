@@ -63,6 +63,7 @@ namespace WindowsGSM.GameServer.Data
                 case Enshrouded.FullName: return new Enshrouded(serverData);
                 case Satisfactory.FullName: return new Satisfactory(serverData);
                 case NOTD.FullName: return new NOTD(serverData);
+                case CK.FullName: return new CK(serverData);
                 default: // Load Plugin
                 {
                     if (pluginList == null) { return null; }

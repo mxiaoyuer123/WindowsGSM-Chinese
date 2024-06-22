@@ -7,6 +7,7 @@ using Discord;
 using System.Net.Sockets;
 using System.Windows.Documents;
 using System.Net;
+using Microsoft.VisualBasic.Logging;
 
 namespace WindowsGSM.GameServer
 {
@@ -30,7 +31,7 @@ namespace WindowsGSM.GameServer
         public string QueryPort = "7778";
         public string Defaultmap = "LargeTerrain_Central_Main";
         public string Maxplayers = "150";
-        public string Additional = $" -game -server -DataLocalFile -log log=123456.log -LOCALLOGTIMES -PrivateServer -disable_qim -GameServerPVPType=1 -MapDifficultyRate=1 -UseBatEye -ForceSteamNet -ServerId=100 -ClusterId=1 -ServerAdminAccounts=123456"; // Additional server start parameter
+        public string Additional = $"-GameServerPVPType=1 -MapDifficultyRate=1 -UseACE -EnableVACBan=1 -ServerId=100 -ClusterId=1 -bStartShutDownServiceInPrivateServer=true -ShutDownServiceIP=127.0.0.1 -ShutDownServicePort=13888 -ShutDownServiceKey=351703 -ServerAdminAccounts=76561198328820250"; // Additional server start parameter
         public string AppId = "1794810";
         // 构造函数，需要传入服务器配置数据对象
         public MOE(Functions.ServerConfig serverData)
@@ -60,60 +61,65 @@ namespace WindowsGSM.GameServer
             var externalIp = IPAddress.Parse(externalIpString);
 
             // Prepare start parameter
-            string param = $"LargeTerrain_Central_Main"; // Set basic parameters
-            param += string.IsNullOrWhiteSpace(_serverData.ServerMap) ? string.Empty : $" {_serverData.ServerMap}";
-            param += string.IsNullOrWhiteSpace(_serverData.ServerName) ? string.Empty : $" -SessionName={_serverData.ServerName}";
+            string param = $"{_serverData.ServerMap} -game -server -DataLocalFile -NotCheckServerSteamAuth -log log={_serverData.ServerName}  -LOCALLOGTIMES -PrivateServer -disable_qim -MultiHome={_serverData.ServerIP} -OutAddress={externalIp.ToString()} -SessionName={_serverData.ServerName} -MaxPlayers={_serverData.ServerMaxPlayer} -Port={_serverData.ServerPort} -QueryPort={_serverData.ServerQueryPort}";// Set basic parameters
+
             param += string.IsNullOrWhiteSpace(_serverData.ServerParam) ? string.Empty : $" {_serverData.ServerParam}";
-            param += string.IsNullOrWhiteSpace(_serverData.ServerIP) ? string.Empty : $" -MultiHome={_serverData.ServerIP}";
-            param += string.IsNullOrWhiteSpace(_serverData.ServerIP) ? string.Empty : $" -OutAddress={externalIp.ToString()}";
-            param += string.IsNullOrWhiteSpace(_serverData.ServerMaxPlayer) ? string.Empty : $" -MaxPlayers={_serverData.ServerMaxPlayer}";
-            param += string.IsNullOrWhiteSpace(_serverData.ServerPort) ? string.Empty : $" -Port={_serverData.ServerPort}";
-            param += string.IsNullOrWhiteSpace(_serverData.ServerQueryPort) ? string.Empty : $" -ShutDownServicePort={_serverData.ServerQueryPort}";
+         
 
+            Process p; // 创建一个 Process 实例来运行服务器进程
 
-            Process p;
+            // 如果不允许嵌入控制台，则以最小化窗口样式启动进程
             if (!AllowsEmbedConsole)
             {
                 p = new Process
                 {
                     StartInfo =
                     {
-                        WorkingDirectory = ServerPath.GetServersServerFiles(_serverData.ServerID),
-                        FileName = shipExePath,
-                        Arguments = param,
-                        WindowStyle = ProcessWindowStyle.Minimized,
-                        UseShellExecute = false
+                        WorkingDirectory = ServerPath.GetServersServerFiles(_serverData.ServerID), // 设置工作目录为服务器文件所在目录
+                        FileName = shipExePath, // 设置要运行的可执行文件路径
+                        Arguments = param, // 设置传递给可执行文件的参数
+                        WindowStyle = ProcessWindowStyle.Minimized, // 设置窗口样式为最小化
+                        UseShellExecute = false // 设置不使用操作系统外壳程序启动进程
                     },
-                    EnableRaisingEvents = true
+                    EnableRaisingEvents = true // 启用进程事件
                 };
-                p.Start();
+                p.Start(); // 启动进程
             }
             else
             {
+                // 如果允许嵌入控制台，则以隐藏窗口样式启动进程，并重定向标准输出和标准错误流
                 p = new Process
                 {
                     StartInfo =
                     {
-                        WorkingDirectory = ServerPath.GetServersServerFiles(_serverData.ServerID),
-                        FileName = shipExePath,
-                        Arguments = param,
-                        WindowStyle = ProcessWindowStyle.Hidden,
-                        CreateNoWindow = true,
-                        UseShellExecute = false,
-                        RedirectStandardOutput = true,
-                        RedirectStandardError = true
+                        WorkingDirectory = ServerPath.GetServersServerFiles(_serverData.ServerID), // 设置工作目录为服务器文件所在目录
+                        FileName = shipExePath, // 设置要运行的可执行文件路径
+                        Arguments = param, // 设置传递给可执行文件的参数
+                        WindowStyle = ProcessWindowStyle.Hidden, // 设置窗口样式为隐藏
+                        CreateNoWindow = true, // 设置不创建窗口
+                        UseShellExecute = false, // 设置不使用操作系统外壳程序启动进程
+                        RedirectStandardOutput = true, // 设置重定向标准输出流
+                        RedirectStandardError = true // 设置重定向标准错误流
                     },
-                    EnableRaisingEvents = true
+                    EnableRaisingEvents = true // 启用进程事件
                 };
+
+                // 创建一个服务器控制台实例
                 var serverConsole = new Functions.ServerConsole(_serverData.ServerID);
+
+                // 将进程的标准输出和标准错误流数据传递给服务器控制台实例的输出处理方法
                 p.OutputDataReceived += serverConsole.AddOutput;
                 p.ErrorDataReceived += serverConsole.AddOutput;
-                p.Start();
+
+                p.Start(); // 启动进程
+
+                // 开始异步读取进程的标准输出和标准错误流
                 p.BeginOutputReadLine();
                 p.BeginErrorReadLine();
             }
 
-            return p;
+            return p; // 返回创建的进程实例
+
         }
 
 

@@ -223,6 +223,15 @@ namespace WindowsGSM.GameServer.Data {
         }
         
         /// <summary>
+        ///   查找类似 Images/Games/ck.png 的本地化字符串。
+        /// </summary>
+        public static string 地心护核者_专用服务器 {
+            get {
+                return ResourceManager.GetString("地心护核者 专用服务器", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Images/Games/nmrih.png 的本地化字符串。
         /// </summary>
         public static string 地狱已满_专用服务器 {
